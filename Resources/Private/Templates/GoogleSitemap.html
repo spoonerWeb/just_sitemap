@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<f:if condition="{pages}">
+		<f:groupedFor each="{pages}" as="groupedPages" groupBy="pid">
+			<f:for each="{groupedPages}" as="page">
+				<url>
+					<loc><f:uri.page pageUid="{page.data.uid}" absolute="1" /></loc>
+					<lastmod><f:format.date format="Y-m-d">{page.data.SYS_LASTCHANGED}</f:format.date></lastmod>
+				</url>
+			</f:for>
+		</f:groupedFor>
+	</f:if>
+</urlset>

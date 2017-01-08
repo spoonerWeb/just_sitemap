@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="14.10.16T16:14Z" product-name="just_sitemap">
+        <header/>
+        <body>
+            <trans-unit id="CType.google_sitemap" xml:space="preserve">
+                <source>Google sitemap</source>
+            </trans-unit>
+            <trans-unit id="wizard.title" xml:space="preserve">
+                <source>Google sitemap (just_sitemap)</source>
+            </trans-unit>
+            <trans-unit id="wizard.description" xml:space="preserve">
+                <source>Google sitemap for pages</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

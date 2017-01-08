@@ -27,7 +27,7 @@ Integrate extension
 
 1. Create page for the sitemap
 2. Hide page in menus
-3. Include static template
+3. Add a template record and include static template
 4. Add a content element and select ``Google Sitemap``
 5. Select the root page(s) and the recursive level to get all pages
 

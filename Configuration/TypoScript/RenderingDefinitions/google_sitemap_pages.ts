@@ -19,10 +19,12 @@ tt_content {
     }
 }
 
-config.disableAllHeaderCode = 1
-config.doctype = none
-config.additionalHeaders = Content-type:text/xml
-
 google_sitemap = PAGE
 google_sitemap.typeNum = 711
 google_sitemap.10 < styles.content.get
+google_sitemap {
+    config.absRefPrefix = /
+    config.disableAllHeaderCode = 1
+    config.doctype = none
+    config.additionalHeaders.10.header = Content-type:text/xml
+}

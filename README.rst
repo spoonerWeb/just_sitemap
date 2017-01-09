@@ -30,6 +30,7 @@ Integrate extension
 3. Add a template record and include static template
 4. Add a content element and select ``Google Sitemap``
 5. Select the root page(s) and the recursive level to get all pages
+6. Go to the page ``[yourdomain]/index.php?id=[page_with_sitemap]&type=711
 
 Add doktype to pages not shown
 ------------------------------

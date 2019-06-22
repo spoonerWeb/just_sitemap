@@ -18,6 +18,9 @@ ter-upload:
     - tags
   before_script:
     - export COMPOSER_CACHE_DIR=/cache/composer
+    - apk update
+    - apk add  --no-cache libmcrypt  git mysql-client curl wget --virtual .build-deps freetype libxml2-dev libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev libmcrypt-dev
+    - docker-php-ext-install soap
   script:
     - composer global require namelesscoder/typo3-repository-client
     - export TYPO3_PATH_WEB="$PWD/.Build/Web"

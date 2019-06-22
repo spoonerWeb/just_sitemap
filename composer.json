@@ -22,7 +22,7 @@
     }
   ],
   "require": {
-    "typo3/cms": "^7.6 || ^8.7 || ^9.5"
+    "typo3/cms-core": "^8.7 || ^9.5"
   },
   "config": {
     "vendor-dir": ".Build/vendor/",

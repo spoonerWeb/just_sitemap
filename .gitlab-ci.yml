@@ -1,5 +1,5 @@
 cache:
-  key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
+  key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
   untracked: true
   paths:
     - cache/
@@ -13,14 +13,13 @@ stages:
 # The variables T3O_USERNAME and T3O_PASSWORD should be set in GitLab
 ter-upload:
   stage: upload
+  image: composer:1
   only:
     - tags
   before_script:
-    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     - export COMPOSER_CACHE_DIR=/cache/composer
   script:
-    - composer install
-    - composer require namelesscoder/typo3-repository-client
+    - composer global require namelesscoder/typo3-repository-client
     - export TYPO3_PATH_WEB="$PWD/.Build/Web"
     - >
       if [ -n "$CI_BUILD_TAG" ] && [ -n "$T3O_USERNAME" ] && [ -n "$T3O_PASSWORD" ]; then
@@ -30,5 +29,5 @@ ter-upload:
         # Upload
         TAG_MESSAGE=`git tag -n10 -l $CI_BUILD_TAG | sed 's/^[0-9.]*[ ]*//g'`
         echo "Uploading release ${CI_BUILD_TAG} to TER"
-        .Build/bin/upload . "$T3O_USERNAME" "$T3O_PASSWORD" "$TAG_MESSAGE"
+        /tmp/vendor/bin/upload . "$T3O_USERNAME" "$T3O_PASSWORD" "$TAG_MESSAGE"
       fi;

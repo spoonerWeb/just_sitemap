@@ -1,5 +1,10 @@
+[compatVersion = 9.0.0]
+tt_content.google_sitemap =< lib.contentElement
+[else]
+tt_content.google_sitemap =< lib.fluidContent
+[end]
+
 tt_content {
-    google_sitemap =< lib.fluidContent
     google_sitemap {
         templateName = GoogleSitemap
         dataProcessing {
